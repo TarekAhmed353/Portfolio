@@ -76,16 +76,20 @@ export default function Navbar() {
     pathname === "/" && activeId === href.split("#")[1];
 
   return (
+    // A floating glass pill that tucks a little closer to the top and gets
+    // more solid once the page scrolls.
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        isScrolled || isOpen
-          ? "border-b border-border bg-background/80 shadow-sm backdrop-blur-md"
-          : "border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-50 px-3 transition-[padding] duration-300 sm:px-4 ${
+        isScrolled ? "pt-2" : "pt-4"
       }`}
     >
       <nav
         aria-label="Main"
-        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
+        className={`mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full border pr-2 pl-5 backdrop-blur-md transition-all duration-300 ${
+          isScrolled || isOpen
+            ? "border-border bg-surface/85 shadow-lg shadow-primary/10"
+            : "border-border/60 bg-surface/50 shadow-sm"
+        }`}
       >
         <Link
           href="/#home"
@@ -118,7 +122,7 @@ export default function Navbar() {
           <ThemeToggle />
           <Link
             href="/#contact"
-            className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover sm:inline-flex"
+            className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover sm:inline-flex"
           >
             Hire me
           </Link>
@@ -139,13 +143,13 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="overflow-hidden lg:hidden"
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="mx-auto mt-2 max-w-5xl rounded-3xl border border-border bg-surface/95 shadow-lg shadow-primary/10 backdrop-blur-md lg:hidden"
           >
-            <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 pb-4 sm:px-6">
+            <ul className="flex flex-col gap-1 p-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
