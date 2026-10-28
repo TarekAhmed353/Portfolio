@@ -21,16 +21,16 @@ const outerRing = pick([
 // on two dashed rings. The outer ring is hidden on phones to keep it tidy.
 export default function PhotoOrbit() {
   return (
-    <div className="group relative grid size-[286px] place-items-center sm:size-[460px] lg:size-[540px]">
+    <div className="group relative grid size-[286px] place-items-center sm:size-[460px] xl:size-[540px]">
       <Ring
         skills={outerRing}
-        className="hidden [--r:210px] sm:block lg:[--r:248px]"
+        className="hidden [--r:210px] sm:block xl:[--r:248px]"
         spin="animate-orbit-slower [animation-direction:reverse]"
         counterSpin="animate-orbit-slower"
       />
       <Ring
         skills={innerRing}
-        className="[--r:125px] sm:[--r:160px] lg:[--r:192px]"
+        className="[--r:125px] sm:[--r:160px] xl:[--r:192px]"
         spin="animate-orbit-slow"
         counterSpin="animate-orbit-slow [animation-direction:reverse]"
       />
@@ -50,10 +50,10 @@ export default function PhotoOrbit() {
             alt={`Portrait of ${site.name}`}
             width={1204}
             height={1600}
-            sizes="(min-width: 1024px) 288px, (min-width: 640px) 240px, 176px"
+            sizes="(min-width: 1280px) 288px, (min-width: 640px) 240px, 176px"
             loading="eager"
             fetchPriority="high"
-            className="aspect-square size-44 rounded-full object-cover object-[50%_20%] sm:size-60 lg:size-72"
+            className="aspect-square size-44 rounded-full object-cover object-[50%_20%] sm:size-60 xl:size-72"
           />
         </div>
       </div>
@@ -90,7 +90,7 @@ function Ring({
             {/* Spins the other way so the logo stays upright */}
             <span
               title={name}
-              className={`flex size-10 items-center justify-center rounded-full border border-border bg-surface shadow-md group-hover:[animation-play-state:paused] motion-reduce:animate-none lg:size-11 ${counterSpin}`}
+              className={`flex size-10 items-center justify-center rounded-full border border-border bg-surface shadow-md group-hover:[animation-play-state:paused] motion-reduce:animate-none xl:size-11 ${counterSpin}`}
               style={{ color: color ?? "var(--foreground)" }}
             >
               <Icon aria-hidden className="size-5" />

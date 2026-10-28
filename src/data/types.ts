@@ -65,6 +65,8 @@ export type Project = {
   features: string[];
   liveUrl: string;
   repoUrl: string;
+  // Featured projects get a large row at the top of the Projects section
+  featured?: boolean;
   // For team projects: what I did on it
   myRole?: string;
   // Shown next to the live link, e.g. a slow free-tier host

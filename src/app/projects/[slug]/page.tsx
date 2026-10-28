@@ -16,6 +16,7 @@ import {
   LuUsers,
 } from "react-icons/lu";
 import BackgroundGlow from "@/components/BackgroundGlow";
+import BrowserFrame from "@/components/ui/BrowserFrame";
 import Reveal from "@/components/ui/Reveal";
 import { getProjectBySlug, projects } from "@/data/projects";
 
@@ -106,7 +107,7 @@ export default async function ProjectPage({
           </Reveal>
 
           <Reveal delay={0.1} className="mt-10">
-            <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-xl shadow-primary/10">
+            <BrowserFrame url={project.liveUrl} className="shadow-xl">
               <Image
                 src={project.image}
                 alt={`Screenshot of ${project.name}`}
@@ -117,7 +118,7 @@ export default async function ProjectPage({
                 fetchPriority="high"
                 className="h-auto w-full"
               />
-            </div>
+            </BrowserFrame>
           </Reveal>
         </div>
       </section>

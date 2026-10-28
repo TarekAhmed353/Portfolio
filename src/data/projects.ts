@@ -4,6 +4,7 @@ import type { Project } from "./types";
 export const projects: Project[] = [
   {
     slug: "bazardor",
+    featured: true,
     name: "BazarDor (বাজার দর)",
     tagline: "Today's grocery prices across Bangladesh, in Bangla",
     image: "/projects/bazardor.png",
@@ -42,6 +43,7 @@ export const projects: Project[] = [
   },
   {
     slug: "bandup",
+    featured: true,
     name: "BandUp",
     tagline: "An AI-powered IELTS preparation platform",
     image: "/projects/bandup.png",

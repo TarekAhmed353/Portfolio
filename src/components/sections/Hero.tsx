@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-svh items-center px-4 pt-24 pb-20 sm:px-6"
+      className="relative isolate flex min-h-svh items-center overflow-x-clip px-4 pt-24 pb-20 sm:px-6"
     >
       <BackgroundGlow />
 
