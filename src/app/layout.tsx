@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
+import MotionProvider from "@/components/MotionProvider";
 import Navbar from "@/components/Navbar";
+import { site } from "@/data/site";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
@@ -15,10 +17,30 @@ const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const description =
+  "Portfolio of Tarek Ahmed, a CSE student and aspiring full-stack developer from Sylhet, Bangladesh, with an interest in AI/ML.";
+
 export const metadata: Metadata = {
-  title: "Tarek Ahmed | Aspiring Full-Stack Developer",
-  description:
-    "Portfolio of Tarek Ahmed, a CSE student and aspiring full-stack developer from Sylhet, Bangladesh, with an interest in AI/ML.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} | ${site.designation}`,
+    template: `%s | ${site.name}`,
+  },
+  description,
+  authors: [{ name: site.name, url: site.url }],
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: site.name,
+    title: `${site.name} | ${site.designation}`,
+    description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} | ${site.designation}`,
+    description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -32,9 +54,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="flex min-h-full flex-col font-sans">
-        <Navbar />
-        {children}
-        <Footer />
+        <MotionProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

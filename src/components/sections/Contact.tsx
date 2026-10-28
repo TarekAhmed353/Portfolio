@@ -40,7 +40,7 @@ export default function Contact() {
           description="Have an internship, a project or a research idea in mind? Reach out through any of these, or drop a message below."
         />
 
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.3fr]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.3fr]">
           <div className="space-y-4">
             {methods.map(({ label, value, href, icon: Icon, copy }, i) => (
               <Reveal key={label} delay={i * 0.1}>

@@ -2,6 +2,7 @@ import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import type { NavLink, SocialLink } from "./types";
 
 export const site = {
+  url: "https://tarekahmed-portfolio.vercel.app",
   name: "Tarek Ahmed",
   designation: "Aspiring Full-Stack Developer",
   tagline: "CSE Student · AI/ML Enthusiast",

@@ -98,7 +98,7 @@ function CategoryCard({
           </span>
           <h3 className="font-bold">{title}</h3>
         </div>
-        <span className="rounded-full bg-surface-muted px-3 py-1 font-mono text-xs text-muted">
+        <span className="shrink-0 rounded-full bg-surface-muted px-3 py-1 font-mono text-xs whitespace-nowrap text-muted">
           {skills.length} skills
         </span>
       </header>

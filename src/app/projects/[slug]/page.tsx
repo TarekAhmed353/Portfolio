@@ -18,7 +18,6 @@ import {
 import BackgroundGlow from "@/components/BackgroundGlow";
 import Reveal from "@/components/ui/Reveal";
 import { getProjectBySlug, projects } from "@/data/projects";
-import { site } from "@/data/site";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -31,7 +30,7 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
-    title: `${project.name} | ${site.name}`,
+    title: project.name,
     description: project.tagline,
   };
 }
