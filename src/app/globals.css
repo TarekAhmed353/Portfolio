@@ -56,6 +56,7 @@
   --color-glow-secondary: var(--glow-secondary);
 
   --font-sans: var(--font-jakarta);
+  --font-display: var(--font-display-face);
   --font-mono: var(--font-jetbrains);
 
   /* Typewriter cursor */
@@ -92,6 +93,15 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+/* Headings use the display font; everything else stays in the body font */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
 
 ::selection {

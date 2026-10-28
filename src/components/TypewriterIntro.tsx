@@ -23,7 +23,7 @@ const lines = [
   {
     text: site.designation,
     as: "p",
-    className: "mt-3 text-xl font-bold sm:text-3xl",
+    className: "mt-3 font-display text-xl font-bold sm:text-3xl",
   },
 ] as const;
 

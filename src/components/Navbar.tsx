@@ -90,7 +90,7 @@ export default function Navbar() {
         <Link
           href="/#home"
           onClick={() => setIsOpen(false)}
-          className="text-xl font-extrabold tracking-tight"
+          className="font-display text-xl font-extrabold tracking-tight"
         >
           {site.name.split(" ")[0]}
           <span className="text-gradient">.</span>

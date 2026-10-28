@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  JetBrains_Mono,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
 import Navbar from "@/components/Navbar";
@@ -9,6 +13,12 @@ import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
+  subsets: ["latin"],
+});
+
+// Headings only; body text stays in Plus Jakarta Sans
+const display = Bricolage_Grotesque({
+  variable: "--font-display-face",
   subsets: ["latin"],
 });
 
@@ -47,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${jakarta.variable} ${display.variable} ${jetbrains.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
