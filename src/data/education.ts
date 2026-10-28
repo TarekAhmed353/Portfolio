@@ -7,6 +7,7 @@ export const education: Education[] = [
     period: "2023 – 2027",
     result: "Current CGPA 3.69 / 4.00",
     details: "Final semester (4th year, 2nd semester) in progress.",
+    current: true,
   },
   {
     degree: "Higher Secondary Certificate (HSC), Science",

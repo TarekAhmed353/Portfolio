@@ -12,6 +12,8 @@ export const research: Research[] = [
     status: "Presented",
     summary:
       "A case study of Dhaka's AI traffic enforcement system, which reads number plates from CCTV feeds and files cases automatically by linking them to vehicle, national ID and mobile records. The paper finds gaps in how that data is secured and in how citizens can challenge an automated fine, and proposes a framework built on secure-by-design, accountable-by-design and alignment with Bangladesh's data protection law.",
+    pdfUrl: "/papers/watching-responsibly.pdf",
+    downloadName: "Tarek-Ahmed-Watching-Responsibly.pdf",
   },
   {
     title:
@@ -24,5 +26,7 @@ export const research: Research[] = [
     status: "Presented",
     summary:
       "Compares Pakistan's rooftop solar boom with Bangladesh's dependence on imported fuel, using a momentum-versus-management framework. It argues that Bangladesh should treat rooftop solar as energy-security policy and proposes a phased rollout that starts with export garment factories, then moves to public buildings and finally to homes and businesses.",
+    pdfUrl: "/papers/following-the-sun.pdf",
+    downloadName: "Tarek-Ahmed-Following-the-Sun.pdf",
   },
 ];

@@ -12,5 +12,6 @@ export const experience: Experience[] = [
       "Shaped every video around what the client needed, and revised edits based on their feedback.",
       "Helped senior editors polish complex projects.",
     ],
+    tools: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
   },
 ];

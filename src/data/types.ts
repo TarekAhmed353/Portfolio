@@ -31,6 +31,7 @@ export type Education = {
   period: string;
   result: string;
   details?: string;
+  current?: boolean;
 };
 
 export type Experience = {
@@ -39,6 +40,7 @@ export type Experience = {
   period: string;
   type: string;
   points: string[];
+  tools?: string[];
 };
 
 export type Research = {
@@ -49,7 +51,8 @@ export type Research = {
   date: string;
   status: string;
   summary: string;
-  link?: string;
+  pdfUrl: string;
+  downloadName: string;
 };
 
 export type Project = {
