@@ -35,6 +35,11 @@ export async function generateMetadata({
   };
 }
 
+// The page reads the slug before rendering so an unknown project can return a
+// real 404 status. That means it can't stream instantly, so tell Next.js this
+// segment is allowed to wait. Known slugs are still prerendered at build time.
+export const instant = false;
+
 export default async function ProjectPage({
   params,
 }: PageProps<"/projects/[slug]">) {
