@@ -14,10 +14,14 @@ export type SocialLink = {
 export type Skill = {
   name: string;
   icon: IconType;
+  // Brand colour for the logo. Left out for black logos (Next.js, GitHub,
+  // Vercel), which use the text colour so they stay visible in dark mode.
+  color?: string;
 };
 
 export type SkillCategory = {
   title: string;
+  icon: IconType;
   skills: Skill[];
 };
 
