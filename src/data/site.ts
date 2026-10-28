@@ -8,12 +8,14 @@ export const site = {
   intro:
     "I'm a CSE student from Sylhet, Bangladesh. I like building applications people can actually use, and I pick up a new technology with almost every project.",
   location: "Sylhet, Bangladesh",
-  email: "tarekmetro353@gmail.com",
+  email: "tareque6229@gmail.com",
   phone: "+8801866812722",
   phoneDisplay: "+880 1866-812722",
   whatsappUrl: "https://wa.me/8801866812722",
-  // Drop the PDF into /public with this name and the button starts working.
+  availability: "Open to internships, web projects & research",
   resumeUrl: "/resume.pdf",
+  resumeFileName: "Tarek-Ahmed-Resume.pdf",
+  photo: "/profile.jpg",
 };
 
 // Hrefs start with "/" so the links also work from the project detail pages.
@@ -31,7 +33,7 @@ export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/TarekAhmed353", icon: FaGithub },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/tarek-ahmed-34826a250/",
+    href: "https://www.linkedin.com/in/tarek-ahmed-cse/",
     icon: FaLinkedin,
   },
   {

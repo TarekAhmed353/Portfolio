@@ -37,6 +37,17 @@ export type Experience = {
   points: string[];
 };
 
+export type Research = {
+  title: string;
+  role: string;
+  coAuthors: string[];
+  venue: string;
+  date: string;
+  status: string;
+  summary: string;
+  link?: string;
+};
+
 export type Project = {
   slug: string;
   name: string;
