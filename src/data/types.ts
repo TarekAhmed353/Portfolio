@@ -65,6 +65,10 @@ export type Project = {
   features: string[];
   liveUrl: string;
   repoUrl: string;
+  // For team projects: what I did on it
+  myRole?: string;
+  // Shown next to the live link, e.g. a slow free-tier host
+  liveNote?: string;
   challenges: string[];
   improvements: string[];
 };

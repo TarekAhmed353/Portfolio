@@ -2,15 +2,8 @@ import About from "@/components/sections/About";
 import Education from "@/components/sections/Education";
 import Experience from "@/components/sections/Experience";
 import Hero from "@/components/sections/Hero";
+import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
-import { navLinks } from "@/data/site";
-
-// Placeholder sections so the navbar links can be tested. Each one is
-// replaced by the real section in steps 8–9.
-const placeholders = navLinks.slice(5).map((link) => ({
-  id: link.href.split("#")[1],
-  title: link.label,
-}));
 
 export default function Home() {
   return (
@@ -20,21 +13,18 @@ export default function Home() {
       <Skills />
       <Education />
       <Experience />
+      <Projects />
 
-      {placeholders.map((section, i) => (
-        <section
-          key={section.id}
-          id={section.id}
-          className={`flex min-h-[70vh] items-center px-4 sm:px-6 ${
-            i % 2 === 1 ? "bg-surface-muted/50" : ""
-          }`}
-        >
-          <div className="mx-auto w-full max-w-6xl">
-            <h2 className="text-3xl font-bold">{section.title}</h2>
-            <p className="mt-2 text-muted">Placeholder section.</p>
-          </div>
-        </section>
-      ))}
+      {/* Placeholder until step 9 */}
+      <section
+        id="contact"
+        className="flex min-h-[70vh] items-center bg-surface-muted/50 px-4 sm:px-6"
+      >
+        <div className="mx-auto w-full max-w-6xl">
+          <h2 className="text-3xl font-bold">Contact</h2>
+          <p className="mt-2 text-muted">Placeholder section.</p>
+        </div>
+      </section>
     </main>
   );
 }

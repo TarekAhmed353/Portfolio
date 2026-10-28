@@ -41,6 +41,52 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "bandup",
+    name: "BandUp",
+    tagline: "An AI-powered IELTS preparation platform",
+    image: "/projects/bandup.png",
+    description:
+      "An IELTS preparation platform built as a team project with Ishmam Hussain. Students take reading and listening tests that are scored on the server, learn vocabulary with flashcards and quizzes, and get AI feedback on their writing and speaking from Google's Gemini API. A dashboard tracks progress against a target band, and an admin panel lets staff manage every passage, test, prompt and student account.",
+    techStack: [
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Supabase",
+      "Google Gemini API",
+      "JWT auth",
+      "JavaScript",
+      "Tailwind CSS",
+      "Chart.js",
+      "Render",
+    ],
+    features: [
+      "Reading and listening tests scored on the server",
+      "AI band-score feedback on essays and recorded speaking answers",
+      "Vocabulary flashcards and quizzes with new, learning and mastered tracking",
+      "A dashboard with progress charts, a target band and an exam date",
+      "An admin panel for managing passages, tests, prompts, vocabulary and students",
+    ],
+    liveUrl: "https://bandup-52ay.onrender.com",
+    repoUrl: "https://github.com/IshmamHussain/BandUp/tree/master/client",
+    myRole:
+      "Collaborator, focused on the frontend. I built the admin panel and the speaking module pages, made UI improvements across the client, and helped wire up the Gemini API for AI essay grading.",
+    liveNote:
+      "Hosted on a free plan, so the first visit can take up to a minute while the server wakes up.",
+    challenges: [
+      "The admin panel manages six kinds of content, and writing a separate table, form and delete dialog for each would have meant the same code six times. One shared CRUD module builds every admin page from a small config of columns and fields.",
+      "The speaking module records answers in the browser with the MediaRecorder API. Chromium defaults to a video WebM container, so the recorder asks for an audio format explicitly and falls back from Opus WebM to plain WebM to MP4 depending on what the browser supports.",
+      "Test answers never leave the server. The pages only receive passages and questions, and scoring happens in the API, so nobody can read the answers from the page source.",
+      "My admin panel and speaking module work landed while Ishmam was changing the same pages, and merging it meant resolving conflicts across 18 files.",
+      "The free hosting plans set hard limits: only 2 accounts can register per hour, and the server sleeps when idle.",
+    ],
+    improvements: [
+      "Full timed mock tests that cover all four modules in one sitting.",
+      "Study plans that adapt to each student's weakest module.",
+      "Pronunciation feedback for the speaking module.",
+      "Moving to paid hosting to remove the sign-up limit and the slow first load.",
+    ],
+  },
+  {
     slug: "fitlog",
     name: "FitLog",
     tagline: "A workout library with a daily plan builder",
