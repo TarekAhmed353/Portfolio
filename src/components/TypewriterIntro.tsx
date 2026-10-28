@@ -1,8 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useReducedMotion } from "motion/react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { site } from "@/data/site";
+
+const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
+
+function subscribeToMotionPreference(onChange: () => void) {
+  const media = window.matchMedia(REDUCED_MOTION);
+  media.addEventListener("change", onChange);
+  return () => media.removeEventListener("change", onChange);
+}
+
+// The server can't know the visitor's setting, so it assumes motion is fine.
+// useSyncExternalStore hydrates with that same value and only then switches,
+// which avoids a hydration mismatch.
+function usePrefersReducedMotion() {
+  return useSyncExternalStore(
+    subscribeToMotionPreference,
+    () => window.matchMedia(REDUCED_MOTION).matches,
+    () => false,
+  );
+}
 
 const TYPE_SPEED = 45; // ms per character
 const START_DELAY = 400;
@@ -34,7 +52,7 @@ const starts = lines.map((_, i) =>
 const total = starts.at(-1)! + lines.at(-1)!.text.length;
 
 export default function TypewriterIntro() {
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = usePrefersReducedMotion();
   const [count, setCount] = useState(0);
   const typed = reduceMotion ? total : count;
 
@@ -83,7 +101,7 @@ export default function TypewriterIntro() {
                 }`}
               >
                 {i === activeLine && (
-                  <span className="animate-blink ml-0.5 inline-block h-[0.9em] w-[3px] translate-y-[0.1em] rounded-full bg-secondary" />
+                  <span className="animate-blink ml-0.5 inline-block h-[0.9em] w-0.75 translate-y-[0.1em] rounded-full bg-secondary" />
                 )}
               </span>
             </span>
