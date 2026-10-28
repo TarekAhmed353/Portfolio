@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { ArrowDown, ArrowRight, Download } from "lucide-react";
 import BackgroundGlow from "@/components/BackgroundGlow";
+import PhotoOrbit from "@/components/PhotoOrbit";
 import TypewriterIntro from "@/components/TypewriterIntro";
 import { site, socialLinks } from "@/data/site";
 
@@ -108,20 +108,7 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative order-1 mx-auto lg:order-2"
         >
-          <div className="rounded-full bg-linear-to-br from-primary to-secondary p-1.5 shadow-2xl shadow-primary/20">
-            <div className="rounded-full bg-background p-1.5">
-              <Image
-                src={site.photo}
-                alt={`Portrait of ${site.name}`}
-                width={1204}
-                height={1600}
-                sizes="(min-width: 1024px) 352px, (min-width: 640px) 288px, 224px"
-                loading="eager"
-                fetchPriority="high"
-                className="aspect-square size-56 rounded-full object-cover object-[50%_20%] sm:size-72 lg:size-88"
-              />
-            </div>
-          </div>
+          <PhotoOrbit />
         </motion.div>
       </div>
 

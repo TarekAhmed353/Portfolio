@@ -59,6 +59,11 @@
   --font-display: var(--font-display-face);
   --font-mono: var(--font-jetbrains);
 
+  /* Hero photo: rotating gradient ring and the two skill orbits */
+  --animate-spin-ring: spin 8s linear infinite;
+  --animate-orbit-slow: spin 30s linear infinite;
+  --animate-orbit-slower: spin 45s linear infinite;
+
   /* Typewriter cursor */
   --animate-blink: blink 1s step-end infinite;
   @keyframes blink {
