@@ -1,3 +1,4 @@
+import BackgroundGlow from "@/components/BackgroundGlow";
 import ThemeToggle from "@/components/ThemeToggle";
 
 // Temporary page to check the fonts, colours and theme toggle.
@@ -13,7 +14,8 @@ const swatches = [
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center gap-10 px-4 py-16 sm:px-6">
+    <main className="relative isolate mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center gap-10 px-4 py-16 sm:px-6">
+      <BackgroundGlow />
       <div className="flex items-center justify-between">
         <span className="font-mono text-sm text-muted">step 1 · setup</span>
         <ThemeToggle />

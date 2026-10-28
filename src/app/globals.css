@@ -3,19 +3,23 @@
 /* `dark:` utilities follow the .dark class on <html> instead of the OS setting */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Light theme: Indigo primary, Sky secondary, slate neutrals */
+/* Light theme: Indigo primary, Sky secondary, on an indigo-tinted "mist" */
 :root {
-  --background: #f8fafc;
+  --background: #f4f5ff;
   --surface: #ffffff;
-  --surface-muted: #f1f5f9;
+  --surface-muted: #eceefb;
   --foreground: #0f172a;
   --muted: #475569;
-  --border: #e2e8f0;
+  --border: #e0e3f3;
 
   --primary: #4f46e5;
   --primary-hover: #4338ca;
   --primary-foreground: #ffffff;
   --secondary: #0284c7;
+
+  --glow-primary: rgb(79 70 229 / 0.18);
+  --glow-secondary: rgb(2 132 199 / 0.16);
+  --dot: rgb(79 70 229 / 0.16);
 }
 
 /* Dark theme: same hues, lighter shades on a deep navy background */
@@ -31,6 +35,10 @@
   --primary-hover: #a5b4fc;
   --primary-foreground: #0b1120;
   --secondary: #38bdf8;
+
+  --glow-primary: rgb(129 140 248 / 0.16);
+  --glow-secondary: rgb(56 189 248 / 0.12);
+  --dot: rgb(148 163 184 / 0.14);
 }
 
 @theme inline {
@@ -44,6 +52,8 @@
   --color-primary-hover: var(--primary-hover);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
+  --color-glow-primary: var(--glow-primary);
+  --color-glow-secondary: var(--glow-secondary);
 
   --font-sans: var(--font-jakarta);
   --font-mono: var(--font-jetbrains);
@@ -54,6 +64,12 @@
   background-image: linear-gradient(to right, var(--primary), var(--secondary));
   background-clip: text;
   color: transparent;
+}
+
+/* Faint dot grid, used behind the hero */
+@utility bg-dots {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 html {
