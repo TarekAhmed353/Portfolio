@@ -50,12 +50,10 @@ export default function TypewriterIntro() {
     return () => clearTimeout(timer);
   }, [count, reduceMotion]);
 
-  // The cursor sits on the line being typed, and stays on the last line
-  // once everything is done.
+  // The cursor sits on the line being typed and disappears once everything
+  // has been typed.
   const activeLine =
-    typed >= total
-      ? lines.length - 1
-      : starts.findLastIndex((start) => typed >= start);
+    typed >= total ? -1 : starts.findLastIndex((start) => typed >= start);
 
   return (
     <>
