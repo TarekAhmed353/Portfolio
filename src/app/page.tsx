@@ -1,4 +1,5 @@
 import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
 import Education from "@/components/sections/Education";
 import Experience from "@/components/sections/Experience";
 import Hero from "@/components/sections/Hero";
@@ -14,17 +15,7 @@ export default function Home() {
       <Education />
       <Experience />
       <Projects />
-
-      {/* Placeholder until step 9 */}
-      <section
-        id="contact"
-        className="flex min-h-[70vh] items-center bg-surface-muted/50 px-4 sm:px-6"
-      >
-        <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-bold">Contact</h2>
-          <p className="mt-2 text-muted">Placeholder section.</p>
-        </div>
-      </section>
+      <Contact />
     </main>
   );
 }

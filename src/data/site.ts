@@ -16,6 +16,9 @@ export const site = {
   resumeUrl: "/resume.pdf",
   resumeFileName: "Tarek-Ahmed-Resume.pdf",
   photo: "/profile.jpg",
+  // Web3Forms access keys are meant to be used in the browser, so this is
+  // safe to commit. Messages go to tareque6229@gmail.com.
+  web3formsKey: "4fccf3c2-6490-4f27-b5ae-7480650d57a5",
 };
 
 // Hrefs start with "/" so the links also work from the project detail pages.
