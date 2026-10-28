@@ -1,9 +1,10 @@
+import About from "@/components/sections/About";
 import Hero from "@/components/sections/Hero";
 import { navLinks } from "@/data/site";
 
 // Placeholder sections so the navbar links can be tested. Each one is
-// replaced by the real section in steps 5–9.
-const placeholders = navLinks.slice(1).map((link) => ({
+// replaced by the real section in steps 6–9.
+const placeholders = navLinks.slice(2).map((link) => ({
   id: link.href.split("#")[1],
   title: link.label,
 }));
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="flex-1">
       <Hero />
+      <About />
 
       {placeholders.map((section, i) => (
         <section

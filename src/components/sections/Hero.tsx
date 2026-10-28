@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { ArrowDown, ArrowRight, Download } from "lucide-react";
 import BackgroundGlow from "@/components/BackgroundGlow";
-import { projects } from "@/data/projects";
 import { site, socialLinks } from "@/data/site";
 
 const container: Variants = {
@@ -137,17 +136,6 @@ export default function Hero() {
               />
             </div>
           </div>
-
-          <FloatingBadge className="-left-6 bottom-10" delay={0.5}>
-            <span className="text-gradient text-lg font-extrabold">
-              {projects.length}+
-            </span>{" "}
-            live projects
-          </FloatingBadge>
-          <FloatingBadge className="-right-4 top-10" delay={0.7}>
-            <span className="text-gradient text-lg font-extrabold">3.69</span>{" "}
-            CGPA in CSE
-          </FloatingBadge>
         </motion.div>
       </div>
 
@@ -159,26 +147,5 @@ export default function Hero() {
         <ArrowDown className="size-6 animate-bounce" />
       </Link>
     </section>
-  );
-}
-
-function FloatingBadge({
-  children,
-  className,
-  delay,
-}: {
-  children: React.ReactNode;
-  className: string;
-  delay: number;
-}) {
-  return (
-    <motion.p
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      className={`absolute hidden rounded-2xl border border-border bg-surface/90 px-4 py-2 text-sm font-medium shadow-lg backdrop-blur sm:block ${className}`}
-    >
-      {children}
-    </motion.p>
   );
 }

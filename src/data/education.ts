@@ -5,8 +5,8 @@ export const education: Education[] = [
     degree: "BSc in Computer Science & Engineering",
     institution: "Metropolitan University, Sylhet",
     period: "2023 – 2027",
-    result: "CGPA 3.69 / 4.00",
-    details: "Currently in the 2nd semester of 4th year.",
+    result: "Current CGPA 3.69 / 4.00",
+    details: "Final semester (4th year, 2nd semester) in progress.",
   },
   {
     degree: "Higher Secondary Certificate (HSC), Science",
