@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { ArrowDown, ArrowRight, Download } from "lucide-react";
 import BackgroundGlow from "@/components/BackgroundGlow";
+import TypewriterIntro from "@/components/TypewriterIntro";
 import { site, socialLinks } from "@/data/site";
 
 const container: Variants = {
@@ -43,24 +44,9 @@ export default function Hero() {
             {site.availability}
           </motion.p>
 
-          <motion.p
-            variants={fadeUp}
-            className="mt-6 font-mono text-sm text-secondary sm:text-base"
-          >
-            Hi there, I&apos;m
-          </motion.p>
-          <motion.h1
-            variants={fadeUp}
-            className="mt-2 text-4xl font-extrabold tracking-tight sm:text-6xl"
-          >
-            <span className="text-gradient">{site.name}</span>
-          </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            className="mt-3 text-xl font-bold sm:text-3xl"
-          >
-            {site.designation}
-          </motion.p>
+          <motion.div variants={fadeUp}>
+            <TypewriterIntro />
+          </motion.div>
           <motion.p
             variants={fadeUp}
             className="mt-2 font-medium text-muted"
@@ -132,7 +118,7 @@ export default function Hero() {
                 sizes="(min-width: 1024px) 352px, (min-width: 640px) 288px, 224px"
                 loading="eager"
                 fetchPriority="high"
-                className="aspect-square size-56 rounded-full object-cover object-[50%_20%] sm:size-72 lg:size-[22rem]"
+                className="aspect-square size-56 rounded-full object-cover object-[50%_20%] sm:size-72 lg:size-88"
               />
             </div>
           </div>

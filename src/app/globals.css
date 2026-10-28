@@ -57,6 +57,14 @@
 
   --font-sans: var(--font-jakarta);
   --font-mono: var(--font-jetbrains);
+
+  /* Typewriter cursor */
+  --animate-blink: blink 1s step-end infinite;
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
 }
 
 /* Indigo → Sky gradient text, used for the name and highlights */
