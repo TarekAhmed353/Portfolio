@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import Navbar from "@/components/Navbar";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
