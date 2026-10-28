@@ -87,7 +87,7 @@ function CategoryCard({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.3 }}
-      className={`rounded-2xl border border-border bg-surface p-6 shadow-sm ${
+      className={`spotlight rounded-2xl border border-border bg-surface p-6 shadow-sm ${
         wide ? "md:col-span-2 lg:col-span-3" : ""
       }`}
     >

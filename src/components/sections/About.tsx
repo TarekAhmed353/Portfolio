@@ -181,7 +181,7 @@ function Tile({
 }) {
   return (
     <Reveal delay={delay} className={className}>
-      <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-surface p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <div className="spotlight group h-full overflow-hidden rounded-3xl border border-border bg-surface p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         {children}
       </div>
     </Reveal>

@@ -7,6 +7,7 @@ import {
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
 import Navbar from "@/components/Navbar";
+import SpotlightTracker from "@/components/SpotlightTracker";
 import { site } from "@/data/site";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar />
           {children}
           <Footer />
+          <SpotlightTracker />
         </MotionProvider>
       </body>
     </html>

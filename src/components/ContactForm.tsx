@@ -46,7 +46,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8"
+      className="spotlight space-y-5 rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8"
     >
       <h3 className="text-xl font-bold">Send me a message</h3>
 

@@ -44,7 +44,7 @@ export default function Contact() {
           <div className="space-y-4">
             {methods.map(({ label, value, href, icon: Icon, copy }, i) => (
               <Reveal key={label} delay={i * 0.1}>
-                <div className="flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 shadow-sm transition hover:border-primary/50">
+                <div className="spotlight flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 shadow-sm transition hover:border-primary/50">
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-primary to-secondary text-primary-foreground">
                     <Icon className="size-5" />
                   </span>

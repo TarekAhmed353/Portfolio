@@ -34,7 +34,7 @@ export default function Education() {
               </span>
 
               <Reveal delay={i * 0.1}>
-                <article className="rounded-2xl border border-border bg-surface p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md">
+                <article className="spotlight rounded-2xl border border-border bg-surface p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <h3 className="text-lg font-bold">{item.degree}</h3>
                     {item.current && (

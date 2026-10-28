@@ -27,7 +27,7 @@ export default function Experience() {
         <div className="mx-auto max-w-4xl space-y-6">
           {experience.map((job) => (
             <Reveal key={`${job.role}-${job.company}`}>
-              <article className="rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
+              <article className="spotlight rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-primary to-secondary text-primary-foreground">
                     <LuBriefcase className="size-6" />
@@ -86,7 +86,7 @@ export default function Experience() {
         <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
           {research.map((paper, i) => (
             <Reveal key={paper.title} delay={i * 0.1} className="h-full">
-              <article className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-secondary/50 hover:shadow-md">
+              <article className="spotlight flex h-full flex-col rounded-2xl border border-border bg-surface p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-secondary/50 hover:shadow-md">
                 <div className="flex flex-wrap items-center gap-2 text-xs">
                   <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-600 dark:text-emerald-400">
                     <LuMic className="size-3" />

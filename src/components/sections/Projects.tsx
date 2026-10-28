@@ -137,7 +137,7 @@ function ProjectCard({ project }: { project: Project }) {
   const hiddenTech = project.techStack.length - VISIBLE_TECH;
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+    <article className="spotlight group flex h-full flex-col rounded-2xl border border-border bg-surface p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
       <Link href={`/projects/${project.slug}`} tabIndex={-1} aria-hidden>
         <BrowserFrame url={project.liveUrl} className="shadow-none">
           <div className="relative aspect-[16/10] overflow-hidden">

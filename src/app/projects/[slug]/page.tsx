@@ -168,7 +168,7 @@ export default async function ProjectPage({
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
             <Reveal>
-              <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
+              <div className="spotlight rounded-2xl border border-border bg-surface p-6 shadow-sm">
                 <h2 className="flex items-center gap-2 font-bold">
                   <LuLayers className="size-5 text-primary" />
                   Tech stack
@@ -188,7 +188,7 @@ export default async function ProjectPage({
 
             {project.myRole && (
               <Reveal delay={0.1}>
-                <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
+                <div className="spotlight rounded-2xl border border-border bg-surface p-6 shadow-sm">
                   <h2 className="flex items-center gap-2 font-bold">
                     <LuUsers className="size-5 text-secondary" />
                     My role
@@ -203,7 +203,7 @@ export default async function ProjectPage({
             <Reveal delay={0.2}>
               <Link
                 href={`/projects/${next.slug}`}
-                className="group block rounded-2xl border border-border bg-surface p-6 shadow-sm transition hover:border-primary/50"
+                className="spotlight group block rounded-2xl border border-border bg-surface p-6 shadow-sm transition hover:border-primary/50"
               >
                 <p className="text-sm text-muted">Next project</p>
                 <p className="mt-1 flex items-center justify-between gap-2 font-bold group-hover:text-primary">
@@ -230,7 +230,7 @@ function DetailBlock({
 }) {
   return (
     <Reveal>
-      <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
+      <div className="spotlight rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
         <h2 className="mb-5 flex items-center gap-3 text-xl font-bold">
           <span className="inline-flex size-9 items-center justify-center rounded-xl bg-linear-to-br from-primary to-secondary text-primary-foreground">
             <Icon className="size-4" />
