@@ -12,7 +12,7 @@ My personal portfolio. It covers who I am, what I work with, my education, work 
 - An About Me section with quick facts and interests
 - Skills grouped into six categories with brand logos and filter tabs
 - An education timeline, my work experience, and two presented research papers you can read or download
-- Five project cards, each with its own detail page covering the tech stack, a description, live and GitHub links, the challenges I faced and future plans
+- Six projects, each with its own detail page covering the tech stack, a description, live and GitHub links, the challenges I faced and future plans
 - Contact details with copy buttons and a contact form that sends straight to my inbox through Web3Forms
 - A custom 404 page, generated favicon and link preview image, a sitemap and robots.txt
 - Animations that switch off for visitors who prefer reduced motion
