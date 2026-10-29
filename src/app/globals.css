@@ -144,9 +144,6 @@ body {
   overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
 }
 
 /* Headings use the display font; everything else stays in the body font */

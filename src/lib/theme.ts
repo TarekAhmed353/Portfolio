@@ -8,8 +8,21 @@ export const themeInitScript = `(function(){try{var t=localStorage.getItem("${TH
 
 export function applyTheme(theme: Theme) {
   const root = document.documentElement;
+
+  // Switch instantly. Without this, every card, button and border runs its
+  // own colour transition at once, which makes the toggle feel slow. The
+  // style is removed right after, so hover transitions keep working.
+  const noTransitions = document.createElement("style");
+  noTransitions.textContent =
+    "*,*::before,*::after{transition:none!important}";
+  document.head.appendChild(noTransitions);
+
   root.classList.toggle("dark", theme === "dark");
   root.style.colorScheme = theme;
+
+  // Make the browser apply the new colours now, while transitions are off
+  window.getComputedStyle(document.body).getPropertyValue("color");
+  setTimeout(() => noTransitions.remove(), 1);
 }
 
 export function getStoredTheme(): Theme | null {

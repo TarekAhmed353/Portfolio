@@ -38,7 +38,7 @@ export default function PhotoOrbit() {
       <div className="relative rounded-full p-1.5">
         <div
           aria-hidden
-          className="absolute inset-6 rounded-full bg-primary/40 blur-2xl"
+          className="absolute -inset-6 bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_40%,transparent)_40%,transparent)]"
         />
         <div
           aria-hidden
