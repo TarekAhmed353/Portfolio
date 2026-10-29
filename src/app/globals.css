@@ -133,6 +133,14 @@
   }
 }
 
+/* Theme switch: ThemeToggle animates the new page snapshot with a growing
+   circle, so turn off the browser's default cross-fade */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 html {
   scroll-behavior: smooth;
   /* Keeps section headings clear of the fixed navbar when jumping to them */

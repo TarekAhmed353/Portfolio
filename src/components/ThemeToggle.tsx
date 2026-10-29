@@ -24,14 +24,56 @@ export default function ThemeToggle() {
     return () => media.removeEventListener("change", onSystemChange);
   }, []);
 
-  function toggle() {
+  function toggle(e: React.MouseEvent<HTMLButtonElement>) {
     const next = document.documentElement.classList.contains("dark")
       ? "light"
       : "dark";
-    applyTheme(next);
-    try {
-      localStorage.setItem(THEME_STORAGE_KEY, next);
-    } catch {}
+    const switchTheme = () => {
+      applyTheme(next);
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, next);
+      } catch {}
+    };
+
+    // Without View Transitions support, or for visitors who prefer reduced
+    // motion, switch instantly.
+    if (
+      !document.startViewTransition ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      switchTheme();
+      return;
+    }
+
+    // Reveal the new theme as a circle growing out of the toggle button. The
+    // browser animates a snapshot of the page, not every element, so it stays
+    // smooth however much is on screen.
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    const transition = document.startViewTransition(switchTheme);
+    transition.ready
+      .then(() => {
+        document.documentElement.animate(
+          {
+            clipPath: [
+              `circle(0px at ${x}px ${y}px)`,
+              `circle(${radius}px at ${x}px ${y}px)`,
+            ],
+          },
+          {
+            duration: 400,
+            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            pseudoElement: "::view-transition-new(root)",
+          },
+        );
+      })
+      .catch(() => {});
   }
 
   // Both icons are rendered and CSS shows the right one, so the server and
