@@ -15,7 +15,7 @@ const others = projects.filter((project) => !project.featured);
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-4 py-24 sm:px-6">
+    <section id="projects" className="bg-surface-muted/50 px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Projects"

@@ -55,6 +55,19 @@ export type Research = {
   downloadName: string;
 };
 
+export type Certificate = {
+  title: string;
+  issuer: string;
+  category: "Bootcamp" | "Course" | "Workshop" | "Research";
+  // Left out when the certificate doesn't show one
+  date?: string;
+  detail: string;
+  credentialId?: string;
+  image: string;
+  width: number;
+  height: number;
+};
+
 export type Project = {
   slug: string;
   name: string;

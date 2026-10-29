@@ -16,7 +16,7 @@ import { research } from "@/data/research";
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-surface-muted/50 px-4 py-24 sm:px-6">
+    <section id="experience" className="px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Experience"
