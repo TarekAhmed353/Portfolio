@@ -20,7 +20,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Things I've built"
-          description="A few projects I'm proud of, from a Bangla price tracker to an AI-powered IELTS platform. Open any of them for the full story."
+          description="A few projects I'm proud of, from a community book library to an AI-powered IELTS platform. Open any of them for the full story."
         />
 
         <div className="space-y-16 lg:space-y-24">
@@ -34,7 +34,7 @@ export default function Projects() {
           <span aria-hidden className="h-px flex-1 bg-border" />
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {others.map((project, i) => (
             <Reveal key={project.slug} delay={i * 0.1} className="h-full">
               <ProjectCard project={project} />
@@ -145,7 +145,7 @@ function ProjectCard({ project }: { project: Project }) {
               src={project.image}
               alt=""
               fill
-              sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
           </div>
