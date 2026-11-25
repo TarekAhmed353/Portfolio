@@ -20,7 +20,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Things I've built"
-          description="A few projects I'm proud of, from a community book library to an AI-powered IELTS platform. Open any of them for the full story."
+          description="A few projects I'm proud of, from a wedding planning marketplace to an AI-powered IELTS platform. Open any of them for the full story."
         />
 
         <div className="space-y-16 lg:space-y-24">

@@ -3,6 +3,48 @@ import type { Project } from "./types";
 // Screenshots go in /public/projects (added in step 8).
 export const projects: Project[] = [
   {
+    slug: "wedplan",
+    featured: true,
+    name: "WedPlan",
+    tagline: "A wedding planning marketplace for couples, vendors and admins",
+    image: "/projects/wedplan.png",
+    description:
+      "A wedding planning platform where couples browse services like photographers, venues and decorators and send booking requests. Vendors list their services, answer requests and can upgrade to a Premium plan, while admins review services, manage users and see every payment. I built both sides on my own: a Next.js website and a separate Express API with MongoDB and Stripe.",
+    techStack: [
+      "Next.js 16",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "shadcn/ui",
+      "Express 5",
+      "MongoDB",
+      "Better Auth",
+      "Stripe",
+      "Vercel",
+    ],
+    features: [
+      "Service search by keyword, with category and location filters and price sorting",
+      "Booking requests that vendors accept or reject, and couples can cancel while pending",
+      "Separate dashboards for customers, vendors and admins",
+      "A Premium vendor plan through Stripe Checkout (test mode) that lifts the 3-service limit",
+      "Admin tools to approve services, block users and review every transaction",
+    ],
+    liveUrl: "https://wedplan-client-taupe.vercel.app",
+    repoUrl: "https://github.com/TarekAhmed353/wedplan-client",
+    challenges: [
+      "A vendor returning from Stripe Checkout doesn't prove they paid. A pending transaction is saved when checkout starts, and only Stripe's signature-verified webhook marks it paid and turns Premium on. Renewals extend the plan, cancelling keeps it until the period ends, and a deleted subscription moves the vendor back to Free.",
+      "Roles are never taken from the request. The Express API verifies the Better Auth token against the website's public keys with jose, then reads the user's role, blocked status and plan from the database on every protected route, so a blocked user loses access at once.",
+      "A booking can only be accepted, rejected or cancelled while it's pending, and only once. Each change is a single atomic database update, and duplicate active requests for the same service and date are blocked.",
+      "Free vendors can have only 3 active services, and there are four ways to go past that: adding a service, switching one back on, editing a rejected one, or an admin approving one again. The limit is checked in every one of them.",
+      "Admin accounts can't be created through sign-up at all. They come only from a server script, and Google users pick their role once after their first sign-in.",
+    ],
+    improvements: [
+      "Reviews and ratings for vendors after a wedding.",
+      "In-app messaging between couples and vendors.",
+      "An availability calendar so couples only request open dates.",
+      "Booking deposits paid through Stripe.",
+    ],
+  },
+  {
     slug: "booknook",
     featured: true,
     name: "BookNook",
